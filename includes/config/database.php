@@ -1,13 +1,11 @@
 <?php
 
 $db = mysqli_connect(
-    $_ENV['DB_HOST'],
-    $_ENV['DB_USER'],
-    $_ENV['DB_PASS'],
-    $_ENV['DB_NAME'],
+    $_ENV['DB_HOST'] ?? getenv('DB_HOST'),
+    $_ENV['DB_USER'] ?? getenv('DB_USER'),
+    $_ENV['DB_PASS'] ?? getenv('DB_PASS'),
+    $_ENV['DB_NAME'] ?? getenv('DB_NAME'),
 );
-
-$db->set_charset('utf8');
 
 if (!$db) {
     echo "Error: No se pudo conectar a MySQL.";
@@ -15,3 +13,5 @@ if (!$db) {
     echo "error de depuración: " . mysqli_connect_error();
     exit;
 }
+
+$db->set_charset('utf8');
