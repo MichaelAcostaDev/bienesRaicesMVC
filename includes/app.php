@@ -8,4 +8,7 @@ require 'funciones.php';
 require 'config/database.php';
 
 // Conectarnos a la base de datos
+if (!$db) {
+    die('Error de conexión con la base de datos.');
+}
 ActiveRecord::setDB($db);
