@@ -68,12 +68,12 @@ class PaginasController
 
             //Configurar SMTP
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->Host = $_ENV['EMAIL_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Username = '57aa07a33e6ccc';
-            $mail->Password = 'a807cd21f362ce';
+            $mail->Username =  $_ENV['EMAIL_USER'];
+            $mail->Password = $_ENV['EMAIL_PASS'];
             $mail->SMTPSecure = 'tls';
-            $mail->Port = '2525';
+            $mail->Port =  $_ENV['EMAIL_PORT'];
 
 
             //Configurar contenido del E-Mail
