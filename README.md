@@ -4,12 +4,6 @@ A real estate management web application built with **PHP using the MVC (Model-V
 
 The application allows users to browse real estate properties, view property details, and manage property listings through an administrator system.
 
-⭐ **Live Demo**
-
-🌐 [Live Application](https://bienesraices-michaelacostadev.mnz.dom.my.id/)
-
-💻 [GitHub Repository](https://github.com/MichaelAcostaDev/bienesRaicesMVC)
-
 ✅ **Features**
 
 - 🔐 User authentication
