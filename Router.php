@@ -7,15 +7,18 @@ class Router
     public $rutasGET = [];
     public $rutasPOST = [];
 
-    public function get($url, $fn){
+    public function get($url, $fn)
+    {
         $this->rutasGET[$url] = $fn;
     }
 
-    public function post($url, $fn){
+    public function post($url, $fn)
+    {
         $this->rutasPOST[$url] = $fn;
     }
 
-    public function comprobarRutas(){
+    public function comprobarRutas()
+    {
         session_start();
 
         $auth = $_SESSION['login'] ?? null;
@@ -55,7 +58,9 @@ class Router
             //La url existe y hay una funcion asociada
             call_user_func($fn, $this);
         } else {
-            header('Location: 404');
+            http_response_code(404);
+            echo 'Página no encontrada';
+            exit;            
             // echo 'pagina no encontrada';
         }
     }

@@ -3,11 +3,11 @@
         'name' => 'micha/freelancer_5',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f030ea7e49b469ac5b6817e5527e26d8ee54c0c5',
+        'reference' => '0720deda085d92a439fb994458050094f13ccf08',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => true,
+        'dev' => false,
     ),
     'versions' => array(
         'graham-campbell/result-type' => array(
@@ -40,7 +40,7 @@
         'micha/freelancer_5' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f030ea7e49b469ac5b6817e5527e26d8ee54c0c5',
+            'reference' => '0720deda085d92a439fb994458050094f13ccf08',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
