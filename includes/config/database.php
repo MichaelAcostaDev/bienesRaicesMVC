@@ -1,10 +1,18 @@
 <?php
 
+// Obtener credenciales de variables de entorno (preferir $_ENV sobre getenv())
+$dbHost = $_ENV['DB_HOST'] ?? getenv('DB_HOST') ?? 'localhost';
+$dbUser = $_ENV['DB_USER'] ?? getenv('DB_USER') ?? 'root';
+$dbPass = $_ENV['DB_PASSWORD'] ?? $_ENV['DB_PASS'] ?? getenv('DB_PASSWORD') ?? getenv('DB_PASS') ?? '';
+$dbName = $_ENV['DB_NAME'] ?? getenv('DB_NAME') ?? 'bienesraices';
+$dbPort = $_ENV['DB_PORT'] ?? getenv('DB_PORT') ?? 3306;
+
 $db = mysqli_connect(
-    $_ENV['DB_HOST'] ?? getenv('DB_HOST'),
-    $_ENV['DB_USER'] ?? getenv('DB_USER'),
-    $_ENV['DB_PASS'] ?? getenv('DB_PASS'),
-    $_ENV['DB_NAME'] ?? getenv('DB_NAME'),
+    $dbHost,
+    $dbUser,
+    $dbPass,
+    $dbName,
+    $dbPort
 );
 
 if (!$db) {
