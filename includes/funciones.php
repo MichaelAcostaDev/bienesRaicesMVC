@@ -1,18 +1,9 @@
 <?php
 
-/**
- * Configuración de rutas compatible con local y Wasmer Edge
- */
-
-// Define carpeta de templates
 define('TEMPLATES_URL', __DIR__ . '/templates');
 define('FUNCIONES_URL', __DIR__ . 'funciones.php');
-
-// Carpeta de imágenes: compatible con local y Wasmer
-// En Wasmer, __DIR__ será /app/includes
-// Por lo que __DIR__ . '/../../public/imagenes' será /app/public/imagenes
-define('CARPETA_IMAGENES', __DIR__ . '/../../public/imagenes/');
-
+define('CARPETA_IMAGENES', $_SERVER['DOCUMENT_ROOT'] . '/imagenes/');
+// require 'app.php';
 
 function incluirTemplate(string $nombre, bool $inicio = false)
 {

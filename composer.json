@@ -1,31 +1,23 @@
 {
-    "name": "micha/bienesraices",
-    "description": "Aplicación de Bienes Raices con PHP 8.3, MVC, MySQL y Composer",
+    "name": "micha/freelancer_5",
+    "description": "Agregando POO a el proyecto de bienes raices",
     "type": "project",
-    "license": "proprietary",
     "authors": [
         {
-            "name": "Michael Acosta",
+            "name": "MichaelAcostaFreelancer",
             "email": "michaelacostafreelancer@gmail.com"
         }
     ],
     "require": {
-        "php": "^8.3",
-        "intervention/image": "^2.7",
+        "intervention/image": "2.7",
         "phpmailer/phpmailer": "^6.10",
         "vlucas/phpdotenv": "^5.6"
     },
     "autoload": {
         "psr-4": {
-            "Model\\": "./models",
-            "MVC\\": "./",
-            "Controllers\\": "./controllers"
-        }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "platform": {
-            "php": "8.3"
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
         }
     }
 }
