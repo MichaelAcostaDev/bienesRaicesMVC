@@ -1,0 +1,64 @@
+---
+name: bienes-raices-mvc
+type: web
+
+# Configuración de PHP
+language: php
+php:
+  version: "8.3"
+
+# Punto de entrada de la aplicación
+# El document_root será /app/public
+main: public/index.php
+
+# Capabilities requeridas
+capabilities:
+  database:
+    engine: mysql
+    # Wasmer proporciona automáticamente:
+    # - DB_HOST
+    # - DB_PORT
+    # - DB_NAME
+    # - DB_USER
+    # - DB_PASSWORD
+
+# Variables de entorno disponibles en producción
+# (configuradas en el dashboard de Wasmer)
+env:
+  # Base de datos (proporcionadas automáticamente por Wasmer)
+  DB_HOST: ${DB_HOST}
+  DB_PORT: ${DB_PORT}
+  DB_USER: ${DB_USER}
+  DB_PASSWORD: ${DB_PASSWORD}
+  DB_NAME: ${DB_NAME}
+  
+  # Configuración de email (configurable por el usuario)
+  # Estos deben configurarse en el dashboard de Wasmer Edge
+  # o a través de variables de entorno locales
+  EMAIL_HOST: ${EMAIL_HOST}
+  EMAIL_USER: ${EMAIL_USER}
+  EMAIL_PASS: ${EMAIL_PASS}
+  EMAIL_PORT: ${EMAIL_PORT}
+
+# Scripts de inicialización y deployment
+scripts:
+  # Instalar dependencias de Composer
+  build: |
+    composer install --no-dev --prefer-dist --optimize-autoloader
+  
+  # Importar base de datos al primera vez
+  # (Ejecutar manualmente si es necesario)
+  # database-init: |
+  #   mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < database.sql
+
+# Directorios
+files:
+  # Permitir escritura en la carpeta de imágenes
+  - path: public/imagenes
+    permissions: 0755
+  - path: public/build
+    permissions: 0755
+
+# Región compatible con bases de datos MySQL
+# Usar una región que soporte MySQL
+region: us-central1
