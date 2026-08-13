@@ -1,0 +1,23 @@
+annotations:
+  anybuild.run/config:
+    composer_enable: true
+    name: out
+    php_architecture: 64-bit
+    php_public_dir: public
+    php_version: '8.3'
+    phpix: true
+  anybuild.run/provider: php
+  anybuild.run/version: 0.27.2
+  wasmer.io/version: 7.2.1
+app_id: da_RMMIrt4Ukr70
+env:
+  PHPIX_PHP_THREADS: '4'
+  DB_HOST: db.fr-roub1.bengt.wasmernet.com
+  DB_PORT: '20184'
+  DB_USER: user_aa05982d
+  DB_PASSWORD: pm_doWnt7ntoPJkQdyUj6gfhjbYuy1X6s3f
+  DB_NAME: bienesraices_crud
+kind: wasmer.io/App.v0
+name: bienesraicesmvc
+owner: michaelacostadev
+package: sha256:645d158f24c87a1cc3f4670edd8601643811d29e73e86cdc4c3a94d37860c8d9
